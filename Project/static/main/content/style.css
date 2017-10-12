@@ -1,0 +1,58 @@
+p, h2, h3, a, legend, label {
+    color: white;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.help-block {
+    color: yellow;
+}
+
+.message {
+    font-style: italic;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: lawngreen;
+}
+
+.warning {
+    color: orange;
+}
+
+.info {
+    color: lightblue;
+}
+
+.errorlist .error {
+    color: red;
+    font-style: italic;
+}
+
+
+
+a:hover {
+    color: lightgray;
+}
+
+body {
+    background: #565656;
+    /*url("images/background2.jpg") no-repeat center top;*/
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.form-control {
+    width: 50%;
+}

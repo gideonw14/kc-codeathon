@@ -1,0 +1,5 @@
+{% extends "accounts/success_page.html" %}
+<!--Extends the generic success page, includes a login button-->
+{% block login-button %}
+    <a href="{% url 'accounts:login' %}" class="btn btn-default">Login</a>
+{% endblock %}

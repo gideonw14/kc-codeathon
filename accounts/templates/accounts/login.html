@@ -1,0 +1,7 @@
+﻿{% extends "main/generic_form.html" %}
+
+{% block forgot-password %}
+
+<a href="{% url 'accounts:password_reset' %}" class="btn btn-primary">Forgot Password</a>
+
+{% endblock %}

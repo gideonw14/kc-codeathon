@@ -1,0 +1,6 @@
+{% extends "main/layout.html" %}
+<!--A generic success page to show the user what they did worked.-->
+{% block content %}
+    <p class="message success">{{ message|default:"Success!" }}</p>
+    {% block login-button %}{% endblock %}
+{% endblock %}

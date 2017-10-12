@@ -1,0 +1,13 @@
+﻿{% extends "main/layout.html" %}
+
+{% block content %}
+<div class="info">{{ password_help_text | safe }}</div>
+
+<form method="post">
+    {% csrf_token %}
+    {{ password_fields }}
+    {{ user_fields }}
+    <button type="submit" class="btn btn-default">Create Account</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "main/layout.html" %}
+<!--A generic form page to display a form with Bootstrap styling.-->
+{% block content %}
+    {% if password_help_text %}
+        <div class="info">{{ password_help_text | safe }}</div>
+    {% endif %}
+    <div class="message info">{{ message|default:"" }}</div>
+    <!--<button onclick="mock_data_org_info();">Mock Org Info</button>-->
+    {% load crispy_forms_tags %}
+    {% crispy form form.helper %}
+    {% block forgot-password %}{% endblock %}
+
+{% endblock %}

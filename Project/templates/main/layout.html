@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigor Billing - {{ title }}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'main/content/style.css' %}" />
+    <script src="{% static 'main/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'main/scripts/modernizr-2.6.2.js' %}"></script>
+    <script src="{% static 'main/scripts/main.js' %}"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'index' %}">Project</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="{% url 'admin:login' %}">Admin Login</a></li>
+            </ul>
+            {% include 'main/login_partial.html' %}
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+    <div class="container body-content">
+        <h2>{{ title }}</h2>
+        {% if messages %}
+            <ul class="messages">
+                {% for my_message in messages %}
+                <li  class="message {% if my_message.tags %}{{ my_message.tags }}{% endif %}" >{{ my_message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <hr />
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="{% static 'main/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'main/scripts/respond.js' %}"></script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

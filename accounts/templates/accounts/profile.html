@@ -1,0 +1,12 @@
+﻿{% extends "main/layout.html" %}
+
+{% block content %}
+
+<b><p>Hello {{ user.username }}! Here is your account information.</p></b>
+<p>First Name: {{ user.first_name }}</p>
+<p>Last Name: {{ user.last_name }}</p>
+<p>Email: {{ user.email }}</p>
+<a href="{% url 'accounts:change_password' %}" class="btn btn-default">Change Password</a>
+<a href="{% url 'accounts:edit' %}" class="btn btn-default">Edit User Information</a>
+
+{% endblock %}

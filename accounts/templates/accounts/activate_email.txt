@@ -1,0 +1,6 @@
+Hello {{ username }}, you requested to create an account at {{ site_name }}.\n\n
+Please go to the following page to activate your account.\n
+{{ protocol }}://{{ domain }}{% url 'accounts:activation' key=activation_key %}
+\n\n
+Thanks for using our site!
+-- The {{ site_name }} team.

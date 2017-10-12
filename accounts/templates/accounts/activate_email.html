@@ -1,0 +1,8 @@
+<h3>{{ site_name }}</h3>
+<hr/>
+<p>Hello <strong>{{ username }}</strong>, you requested to create an account at {{ site_name }}.</p>
+<p>Please go to the following page to activate your account.</p>
+<a>{{ protocol }}://{{ domain }}{% url 'accounts:activation' key=activation_key %}</a>
+
+<p>Thanks for using our site!</p>
+<p>-- The {{ site_name }} team.</p>
