@@ -1,6 +1,5 @@
 # django-starter
 A Django starter pack with user authentication set up
-test
 
 __Getting Started__
 - PyCharm IDE - [Download](https://www.jetbrains.com/pycharm/download/#section=windows)
