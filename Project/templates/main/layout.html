@@ -28,6 +28,8 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="{% url 'admin:login' %}">Admin Login</a></li>
+              <li><a href="{% url 'chat:index' %}">Chats</a></li>
+              <li><a href="{% url 'games:index' %}">Games</a></li>
             </ul>
             {% include 'main/login_partial.html' %}
           </div><!--/.nav-collapse -->
