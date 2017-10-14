@@ -9,8 +9,9 @@ class Task(models.Model):
     name = models.CharField(max_length=c.TASK_NAME_MAX)
     prerequisites = ArrayField(models.CharField(max_length=c.TASK_NAME_MAX))
     delay = models.IntegerField(default=0)
-    time_to_complete = models.IntegerField()
+    time_to_complete = models.IntegerField(default=1)
     category = models.CharField(max_length=c.TASK_CATEGORY_MAX)
+    completed = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

@@ -31,6 +31,7 @@ SECRET_KEY = get_env_variable('DEV_SECRET_1')
 INSTALLED_APPS = [
     # Add your apps here to enable them
     'accounts.apps.AccountsConfig',
+    'game.apps.GameConfig',
     'chat.apps.ChatConfig',
     'django.contrib.admin',
     'django.contrib.auth',
