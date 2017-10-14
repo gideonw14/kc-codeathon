@@ -23,7 +23,7 @@ def get_env_variable(var_name):
 
 SECRET_KEY = get_env_variable('DEV_SECRET_1')
 
-ALLOWED_HOSTS = ['testserver', 'localhost']
+# ALLOWED_HOSTS = ['testserver', 'localhost']
 
 
 # Application definition
@@ -31,12 +31,14 @@ ALLOWED_HOSTS = ['testserver', 'localhost']
 INSTALLED_APPS = [
     # Add your apps here to enable them
     'accounts.apps.AccountsConfig',
+    'chat.apps.ChatConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
     'crispy_forms',
 ]
 
@@ -69,6 +71,21 @@ TEMPLATES = [
         },
     },
 ]
+
+redis_host = os.environ.get('REDIS_HOST', 'localhost')
+
+# Channel layer definitions
+# http://channels.readthedocs.org/en/latest/deploying.html#setting-up-a-channel-backend
+CHANNEL_LAYERS = {
+    "default": {
+        # This example app uses the Redis channel layer implementation asgi_redis
+        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [(redis_host, 6379)],
+        },
+       "ROUTING": "Project.settings.routing.channel_routing", # We will create it in a moment
+    },
+}
 
 WSGI_APPLICATION = 'Project.wsgi.application'
 
