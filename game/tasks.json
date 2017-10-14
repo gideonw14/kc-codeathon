@@ -3,19 +3,237 @@
   [
     {
       "name" : "Make Budget",
-      "prerequisites" : "None",
+      "prerequisites" : ["None"],
       "delay" : 0,
-      "timeToComplete" : 8,
-      "category" : "finances",
+      "time_to_complete" : 8,
+      "category" : "Finances",
       "completed" : false
     },
     {
-      "name" : "Spend money",
-      "prerequisites" : ["Make Budget", "Get a job"],
+      "name" : "Study Design",
+      "prerequisites" : ["None"],
       "delay" : 0,
-      "timeToComplete" : 8,
-      "category" : "finances",
+      "time_to_complete" : 1,
+      "category" : "Design",
       "completed" : false
     },
+    {
+      "name" : "Study Safety",
+      "prerequisites" : ["None"],
+      "delay" : 0,
+      "time_to_complete" : 1,
+      "category" : "Safety",
+      "completed" : false
+    },
+    {
+      "name" : "Study Building",
+      "prerequisites" : ["None"],
+      "delay" : 0,
+      "time_to_complete" : 1,
+      "category" : "Building",
+      "completed" : false
+    },
+    {
+      "name" : "Study Finances",
+      "prerequisites" : ["None"],
+      "delay" : 0,
+      "time_to_complete" : 1,
+      "category" : "Finances",
+      "completed" : false
+    },
+    {
+      "name" : "Study General",
+      "prerequisites" : ["None"],
+      "delay" : 0,
+      "time_to_complete" : 1,
+      "category" : "All",
+      "completed" : false
+    },
+    {
+      "name" : "Design Desk",
+      "prerequisites" : ["None"],
+      "delay" : 0,
+      "time_to_complete" : 3,
+      "category" : "Design",
+      "completed" : false
+    },
+    {
+      "name" : "Design Chair",
+      "prerequisites" : ["None"],
+      "delay" : 0,
+      "time_to_complete" : 1,
+      "category" : "Design",
+      "completed" : false
+    },
+    {
+      "name" : "Design Couch",
+      "prerequisites" : ["None"],
+      "delay" : 0,
+      "time_to_complete" : 4,
+      "category" : "Design",
+      "completed" : false
+    },
+    {
+      "name" : "Design Bookshelf",
+      "prerequisites" : ["None"],
+      "delay" : 0,
+      "time_to_complete" : 6,
+      "category" : "Design",
+      "completed" : false
+    },
+    {
+      "name" : "Design Coffee Table",
+      "prerequisites" : ["None"],
+      "delay" : 0,
+      "time_to_complete" : 3,
+      "category" : "Design",
+      "completed" : false
+    },
+    {
+      "name" : "Draw Plans",
+      "prerequisites" : ["Design Coffee Table",
+        "Design Bookshelf", "Design Couch",
+        "Design Chair", "Design Desk"],
+      "delay" : 0,
+      "time_to_complete" : 2,
+      "category" : "Design",
+      "completed" : false
+    },
+    {
+      "name" : "Buy Parts For Chair",
+      "prerequisites" : ["Design Chair"],
+      "delay" : 0,
+      "time_to_complete" : 4,
+      "category" : "Finances",
+      "completed" : false
+    },
+    {
+      "name" : "Buy Parts For Couch",
+      "prerequisites" : ["Design Couch"],
+      "delay" : 0,
+      "time_to_complete" : 2,
+      "category" : "Finances",
+      "completed" : false
+    },
+    {
+      "name" : "Buy Parts For Desk",
+      "prerequisites" : ["Design Desk"],
+      "delay" : 0,
+      "time_to_complete" : 4,
+      "category" : "Finances",
+      "completed" : false
+    },
+    {
+      "name" : "Buy Parts For Bookshelf",
+      "prerequisites" : ["Design Bookshelf"],
+      "delay" : 0,
+      "time_to_complete" : 4,
+      "category" : "Finances",
+      "completed" : false
+    },
+    {
+      "name" : "Buy Parts For Coffee Table",
+      "prerequisites" : ["Design Coffee Table"],
+      "delay" : 0,
+      "time_to_complete" : 4,
+      "category" : "Finances",
+      "completed" : false
+    },
+    {
+      "name" : "Review Safety Standards Part 1",
+      "prerequisites" : ["None"],
+      "delay" : 0,
+      "time_to_complete" : 5,
+      "category" : "Safety",
+      "completed" : false
+    },
+    {
+      "name" : "Review Safety Standards Part 2",
+      "prerequisites" : ["Review Safety Standards Part 1"],
+      "delay" : 0,
+      "time_to_complete" : 5,
+      "category" : "Safety",
+      "completed" : false
+    },
+    {
+      "name" : "Inspect Chair",
+      "prerequisites" : ["Build Chair"],
+      "delay" : 0,
+      "time_to_complete" : 3,
+      "category" : "Safety",
+      "completed" : false
+    },
+    {
+      "name" : "Inspect Couch",
+      "prerequisites" : ["Build Couch"],
+      "delay" : 0,
+      "time_to_complete" : 3,
+      "category" : "Safety",
+      "completed" : false
+    },
+    {
+      "name" : "Inspect Bookshelf",
+      "prerequisites" : ["Build Bookshelf"],
+      "delay" : 0,
+      "time_to_complete" : 3,
+      "category" : "Safety",
+      "completed" : false
+    },
+    {
+      "name" : "Inspect Desk",
+      "prerequisites" : ["Build Desk"],
+      "delay" : 0,
+      "time_to_complete" : 3,
+      "category" : "Safety",
+      "completed" : false
+    },
+    {
+      "name" : "Inspect Coffee Table",
+      "prerequisites" : ["Build Coffee Table"],
+      "delay" : 0,
+      "time_to_complete" : 3,
+      "category" : "Safety",
+      "completed" : false
+    },
+    {
+      "name" : "Build Couch",
+      "prerequisites" : ["Buy Parts For Couch"],
+      "delay" : 0,
+      "time_to_complete" : 5,
+      "category" : "Building",
+      "completed" : false
+    },
+    {
+      "name" : "Build Chair",
+      "prerequisites" : ["Buy Parts For Chair"],
+      "delay" : 0,
+      "time_to_complete" : 3,
+      "category" : "Building",
+      "completed" : false
+    },
+    {
+      "name" : "Build Bookshelf",
+      "prerequisites" : ["Buy Parts For Bookshelf"],
+      "delay" : 0,
+      "time_to_complete" : 4,
+      "category" : "Building",
+      "completed" : false
+    },
+    {
+      "name" : "Build Coffee Table",
+      "prerequisites" : ["Buy Parts For Coffee Table"],
+      "delay" : 0,
+      "time_to_complete" : 3,
+      "category" : "Building",
+      "completed" : false
+    },
+    {
+      "name" : "Build Desk",
+      "prerequisites" : ["Buy Parts For Desk"],
+      "delay" : 0,
+      "time_to_complete" : 5,
+      "category" : "Building",
+      "completed" : false
+    }
   ]
 }

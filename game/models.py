@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from . import constants as c
 
 # Create your models here.
+
 # class Task(models.Model):
 #     name = models.CharField(max_length=c.TASK_NAME_MAX)
 #     prerequisites = ArrayField(models.CharField(max_length=c.TASK_NAME_MAX))
@@ -39,3 +40,5 @@ class Task():
 #     def __str__(self):
 #         return self.name
 
+    # def __str__(self):
+    #     return self.name
