@@ -23,7 +23,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test',
+        'NAME': 'kc-codeathon',
         'USER': 'postgres',
         'PASSWORD': get_env_variable('DEV_SECRET_2'),
         'HOST': 'localhost',
