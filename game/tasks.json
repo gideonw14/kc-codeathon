@@ -1,0 +1,21 @@
+{
+  "tasks" : 
+  [
+    {
+      "name" : "Make Budget",
+      "prerequisites" : "None",
+      "delay" : 0,
+      "timeToComplete" : 8,
+      "category" : "finances",
+      "completed" : false
+    },
+    {
+      "name" : "Spend money",
+      "prerequisites" : ["Make Budget", "Get a job"],
+      "delay" : 0,
+      "timeToComplete" : 8,
+      "category" : "finances",
+      "completed" : false
+    },
+  ]
+}
