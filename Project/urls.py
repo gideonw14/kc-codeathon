@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^favicon\.ico$', favicon_view),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^chat/', include('chat.urls')),
 ]
