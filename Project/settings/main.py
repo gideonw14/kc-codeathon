@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'channels',
     'crispy_forms',
-    'game.apps.GameConfig'
 ]
 
 MIDDLEWARE_CLASSES = [
