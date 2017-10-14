@@ -100,9 +100,11 @@ $(function () {
 
     // Room join/leave
     $(".room-link").click(function () {
+        console.log("clicked.")
         roomId = $(this).attr("data-room-id");
         if (inRoom(roomId)) {
             // Leave room
+            console.log("leaving room")
             $(this).removeClass("joined");
             socket.send(JSON.stringify({
                 "command": "leave",  // determines which handler will be used (see chat/routing.py)
@@ -110,6 +112,7 @@ $(function () {
             }));
         } else {
             // Join room
+            console.log("joining room")
             $(this).addClass("joined");
             socket.send(JSON.stringify({
                 "command": "join",
