@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from .models import Task
 import json
 import os
@@ -12,6 +13,7 @@ def getTaskList():
 		all_tasks.append(Task(task_data))
 	return all_tasks
 
+@csrf_exempt
 def game(request):
     if request.method == "POST":
         print("\n\n\n", request.POST.getlist('toSubmit[]'))
