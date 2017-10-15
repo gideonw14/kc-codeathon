@@ -1,19 +1,38 @@
-from channels.auth import channel_session_user_from_http, channel_session_user
-
-from chat.settings import NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS, MSG_TYPE_ENTER, MSG_TYPE_LEAVE
-from chat.utils import catch_client_error, get_room_or_error
-from .models import Room
 import json
 from channels import Channel
+from channels.auth import channel_session_user_from_http, channel_session_user
+
+from .settings import MSG_TYPE_LEAVE, MSG_TYPE_ENTER, NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS
+from .models import Room
+from .utils import get_room_or_error, catch_client_error
 from .exceptions import ClientError
+
+
+### WebSocket handling ###
+
 
 # This decorator copies the user from the HTTP session (only available in
 # websocket.connect or http.request messages) to the channel session (available
 # in all consumers with the same reply_channel, so all three here)
 @channel_session_user_from_http
 def ws_connect(message):
-    message.reply_channel.send({"accept": True})
+    message.reply_channel.send({'accept': True})
+    # Initialise their session
     message.channel_session['rooms'] = []
+
+
+# Unpacks the JSON in the received WebSocket frame and puts it onto a channel
+# of its own with a few attributes extra so we can route it
+# This doesn't need @channel_session_user as the next consumer will have that,
+# and we preserve message.reply_channel (which that's based on)
+def ws_receive(message):
+    # All WebSocket frames have either a text or binary payload; we decode the
+    # text part here assuming it's JSON.
+    # You could easily build up a basic framework that did this encoding/decoding
+    # for you as well as handling common errors.
+    payload = json.loads(message['text'])
+    payload['reply_channel'] = message.content['reply_channel']
+    Channel("chat.receive").send(payload)
 
 
 @channel_session_user
@@ -28,18 +47,8 @@ def ws_disconnect(message):
         except Room.DoesNotExist:
             pass
 
-# Unpacks the JSON in the received WebSocket frame and puts it onto a channel
-# of its own with a few attributes extra so we can route it
-# This doesn't need @channel_session_user as the next consumer will have that,
-# and we preserve message.reply_channel (which that's based on)
-def ws_receive(message):
-    # All WebSocket frames have either a text or binary payload; we decode the
-    # text part here assuming it's JSON.
-    # You could easily build up a basic framework that did this encoding/decoding
-    # for you as well as handling common errors.
-    payload = json.loads(message['text'])
-    payload['reply_channel'] = message.content['reply_channel']
-    Channel("chat.receive").send(payload)
+
+### Chat channel handling ###
 
 
 # Channel_session_user loads the user out from the channel session and presents
@@ -72,13 +81,6 @@ def chat_join(message):
         }),
     })
 
-@channel_session_user
-@catch_client_error
-def chat_send(message):
-    if int(message['room']) not in message.channel_session['rooms']:
-        raise ClientError("ROOM_ACCESS_DENIED")
-    room = get_room_or_error(message["room"], message.user)
-    room.send_message(message["message"], message.user)
 
 @channel_session_user
 @catch_client_error
@@ -98,3 +100,15 @@ def chat_leave(message):
             "leave": str(room.id),
         }),
     })
+
+
+@channel_session_user
+@catch_client_error
+def chat_send(message):
+    # Check that the user in the room
+    if int(message['room']) not in message.channel_session['rooms']:
+        raise ClientError("ROOM_ACCESS_DENIED")
+    # Find the room they're sending to, check perms
+    room = get_room_or_error(message["room"], message.user)
+    # Send the message along
+    room.send_message(message["message"], message.user)
