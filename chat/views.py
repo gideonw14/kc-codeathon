@@ -14,5 +14,8 @@ def index(request):
 
     # Render that in the index template
     return render(request, "index.html", {
+        'title': 'Chat Rooms',
         "rooms": rooms,
     })
+
+
