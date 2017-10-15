@@ -25,6 +25,9 @@ def game(request):
     }
     return render(request, 'game/game.html', context)
 
-if __name__ == "__main__":
-	d = getTaskList()
-	print(d)
+def gameRules(request):
+    context = {
+        'title': "Game Rules Page"
+    }
+
+    return render(request, 'game/gameRules.html', context)

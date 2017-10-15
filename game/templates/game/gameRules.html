@@ -1,0 +1,35 @@
+{% extends "main/layout.html" %}
+
+{% block content %}
+
+    <list style="color: white; font-size: 20px">
+        <ol>
+            <li>
+
+            </li>
+            <br>
+            <li>
+
+            </li>
+            <br>
+            <li>
+
+            </li>
+            <br>
+            <li>
+
+            </li>
+        </ol>
+    </list>
+
+    <br><br>
+
+    <a href="{% url 'game:index' %}" style="background-color: black" class="btn">
+        <strong>Play Game!</strong>
+    </a>
+
+    <a href="{% url 'index' %}"  class="btn">
+        Go Back
+    </a>
+
+{% endblock %}
