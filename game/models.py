@@ -16,26 +16,10 @@ from . import constants as c
 #     def __str__(self):
 #         return self.name
 
-class Task():
-    def __init__(self, data):
-        """data must be a dictionary"""
-        self.name = data["name"]
-        self.prerequisites = data["prerequisites"]
-        self.delay = data["delay"]
-        self.time_to_complete = data["time_to_complete"]
-        self.category = data["category"]
-        self.id = data["id"]
-
-    def __str__(self):
-        return self.name
-
-
 class Player(models.Model):
     name = models.OneToOneField(User, on_delete=models.CASCADE)
     knowledge = models.ManyToManyField('Knowledge')
     tasks_completed = ArrayField(models.CharField(max_length=c.TASK_NAME_MAX))
-    tasks_being_performed = ArrayField(models.CharField(max_length=c.TASK_NAME_MAX))
-    time_remaining_in_day = models.IntegerField(default=8)
 
     def __str__(self):
         return self.name
@@ -46,3 +30,16 @@ class Knowledge(models.Model):
 
     def __str__(self):
         return self.category
+
+class Task():
+    def __init__(self, data):
+        """data must be a dictionary"""
+        self.name = data["name"]
+        self.prerequisites = data["prerequisites"]
+        self.delay = data["delay"]
+        self.time_to_complete = data["time_to_complete"]
+        self.category = data["category"]
+        self.id = data["id"]
+
+    # def __str__(self):
+    #     return self.name
