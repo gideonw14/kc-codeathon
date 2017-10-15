@@ -1,3 +1,5 @@
+var toSubmit = [];
+
 $(document).ready(function() {
 	$(".todo-item").click(function() {
 		console.log("todo item clicked")
@@ -6,6 +8,8 @@ $(document).ready(function() {
 		newItem.removeClass("todo-item");
 		newItem.addClass("today-item");
 		$(this).toggle();
+		toSubmit.push(this.id);
+		console.log(toSubmit);
 	});
 
 	$(document).on("click", ".today-item", function() {
@@ -14,6 +18,8 @@ $(document).ready(function() {
 		oldId = this.id;
 		$(this).remove();
 		$("#" + oldId).toggle();
+		toSubmit.splice(toSubmit.indexOf(oldId), 1);
+		console.log(toSubmit);
 	});
 });
 
