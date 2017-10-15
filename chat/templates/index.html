@@ -1,6 +1,7 @@
 {% extends "main/layout.html" %}
 
 {% block content %}
+    {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'main/content/chat.css' %}" />
     <ul class="rooms">
         {% for room in rooms %}
