@@ -2,6 +2,10 @@
 
 {% block content %}
 
+{% load staticfiles %}
+
+    <script src="{% static 'main/scripts/game.js' %}"></script>
+
 {% for task in tasks %}
   <a href = "#" class = "list-group-item">
   	<p><h5>{{ task.name }}</h5></p>
