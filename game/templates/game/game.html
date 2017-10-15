@@ -2,9 +2,13 @@
 
 {% block content %}
 
+{% load staticfiles %}
+
+    <script src="{% static 'main/scripts/game.js' %}"></script>
+
 {% for task in tasks %}
         {% if task.prerequisites.0 == "None" %}
-            <a href="#" class="list-group-item">
+            <a href="#" class="list-group-item mainlist">
             <p><h4>
                 Task: {{ task.name }} &emsp; Duration: {{ task.time_to_complete }}
                 &emsp; Category: {{ task.category }}</h4></p>
@@ -16,7 +20,7 @@
 
 {% for task in tasks %}
         {% if task.prerequisites.0 != "None" %}
-            <a href = "#" class = "list-group-item">
+            <a href = "#" class = "list-group-item mainlist">
   	        <p><h4>
                 Task: {{ task.name }} &emsp; Duration: {{ task.time_to_complete }}
                 &emsp; Category: {{ task.category }}</h4></p>
