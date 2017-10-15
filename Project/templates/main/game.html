@@ -1,0 +1,16 @@
+{% extends "main/layout.html" %}
+
+{% block content %}
+
+{% for task in tasks %}
+  <a href = "#" class = "list-group-item">
+  	<p><h5>{{ task.name }}</h5></p>
+  	<p>Prerequisites: {{ task.prerequisites }}</p>
+  	<p>{{ task.delay }}</p>
+  	<p>{{ task.time_to_complete }}</p>
+  	<p>{{ task.category }}</p>
+  </a>
+
+{% endfor %}
+
+{% endblock %}
