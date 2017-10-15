@@ -15,6 +15,8 @@ def getTaskList():
 
 
 def game(request):
+    if request.method == "POST":
+        print("\n\n\n", request.POST.getlist('toSubmit[]'))
     # tasks = Task.objects.all()
     all_tasks = getTaskList()
   

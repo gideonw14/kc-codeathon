@@ -21,6 +21,16 @@ $(document).ready(function() {
 		toSubmit.splice(toSubmit.indexOf(oldId), 1);
 		console.log(toSubmit);
 	});
+
+	$("#task-submit").click(function() {
+		console.log("submit button pushed");
+		$.ajax({
+			type: 'POST',
+			url: '/game/',
+			data: {'toSubmit[]' : toSubmit}
+		});
+
+	});
 });
 
 
