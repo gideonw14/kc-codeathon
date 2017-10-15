@@ -1,8 +1,9 @@
 {% extends "main/layout.html" %}
 
 {% block content %}
-
-    <list style="color: white; font-size: 20px">
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/content/gameRules.css' %}" />
+    <list>
         <ol>
             <li>
 
@@ -24,7 +25,7 @@
 
     <br><br>
 
-    <a href="{% url 'game:index' %}" style="background-color: black" class="btn">
+    <a href="{% url 'game:index' %}" class="btn">
         <strong>Play Game!</strong>
     </a>
 

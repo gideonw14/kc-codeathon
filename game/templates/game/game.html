@@ -3,7 +3,8 @@
 {% block content %}
 
 {% load staticfiles %}
-
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'main/content/game.css' %}" />
     <script src="{% static 'main/scripts/game.js' %}"></script>
 
 <div class="container">
@@ -18,7 +19,7 @@
 	                        Task: {{ task.name }} &emsp; Duration: {{ task.time_to_complete }}
 	                        &emsp; Category: {{ task.category }}</h4></p>
 	                    <br>
-	                    <p style="color:black">No Prerequisites</p>
+	                    <p>No Prerequisites</p>
 	                    </a>
 	                {% endif %}
                 {% endif %}
@@ -32,7 +33,7 @@
 	                        Task: {{ task.name }} &emsp; Duration: {{ task.time_to_complete }}
 	                        &emsp; Category: {{ task.category }}</h4></p>
 	                    <br>
-	                    <p style="color:black">Prerequisite(s):</p>
+	                    <p>Prerequisite(s):</p>
 	                    {% for prereq in task.prerequisites %}
 	                        <li> {{ prereq }} </li>
 	                    {% endfor %}
