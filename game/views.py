@@ -15,18 +15,16 @@ def getTaskList():
 
 
 def game(request):
-    
     # tasks = Task.objects.all()
     all_tasks = getTaskList()
   
 
     context = {
         'title': "Game Page",
-        'tasks' : all_tasks,
+        'tasks': all_tasks,
     }
     return render(request, 'game/game.html', context)
 
 if __name__ == "__main__":
 	d = getTaskList()
 	print(d)
-

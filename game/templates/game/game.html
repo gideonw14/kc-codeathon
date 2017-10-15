@@ -3,17 +3,30 @@
 {% block content %}
 
 {% for task in tasks %}
-  <a href = "#" class = "list-group-item">
-  	<p><h5>{{ task.name }}</h5></p>
-  	<p style="color:black">Prerequisites:</p>
-  		{% for prereq in task.prerequisites %}
-  			<li> {{ prereq }} </li>
- 		{% endfor %}
-  	<p style="color:black">{{ task.delay }}</p>
-  	<p style="color:black">{{ task.time_to_complete }}</p>
-  	<p style="color:black">{{ task.category }}</p>
-  </a>
+        {% if task.prerequisites.0 == "None" %}
+            <a href="#" class="list-group-item">
+            <p><h4>
+                Task: {{ task.name }} &emsp; Duration: {{ task.time_to_complete }}
+                &emsp; Category: {{ task.category }}</h4></p>
+            <br>
+  	        <p style="color:black">No Prerequisites</p>
+            </a>
+        {% endif %}
+{% endfor %}
 
+{% for task in tasks %}
+        {% if task.prerequisites.0 != "None" %}
+            <a href = "#" class = "list-group-item">
+  	        <p><h4>
+                Task: {{ task.name }} &emsp; Duration: {{ task.time_to_complete }}
+                &emsp; Category: {{ task.category }}</h4></p>
+            <br>
+  	        <p style="color:black">Prerequisite(s):</p>
+            {% for prereq in task.prerequisites %}
+                <li> {{ prereq }} </li>
+            {% endfor %}
+            </a>
+        {% endif %}
 {% endfor %}
 
 {% endblock %}
