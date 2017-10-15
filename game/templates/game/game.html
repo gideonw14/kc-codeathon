@@ -14,7 +14,7 @@
         {% for task in tasks %}
                 {% if task.prerequisites.0 == "None" %}
                 	{% if task.completed == false %}
-	                    <a href="#" class="list-group-item todo-item" id = "{{ task.id }}">
+	                    <a href="#" class="list-group-item todo-item" id = "{{ task.id }} " data-time = "{{ task.time_to_complete }}">
 	                    <p><h4>
 	                        Task: {{ task.name }} &emsp; Duration: {{ task.time_to_complete }}
 	                        &emsp; Category: {{ task.category }}</h4></p>
@@ -28,7 +28,7 @@
         {% for task in tasks %}
                 {% if task.prerequisites.0 != "None" %}
 	                {% if task.completed == false %}
-	                    <a href = "#" class = "list-group-item todo-item" id = "{{ task.id }}">
+	                    <a href = "#" class = "list-group-item todo-item" id = "{{ task.id }}"" data-time = "{{ task.time_to_complete }}">
 	                    <p><h4>
 	                        Task: {{ task.name }} &emsp; Duration: {{ task.time_to_complete }}
 	                        &emsp; Category: {{ task.category }}</h4></p>
