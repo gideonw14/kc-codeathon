@@ -1,0 +1,56 @@
+p {
+    color: black;
+}
+
+#today-container {
+	flex: 0, 0;
+	width: 100%;
+}
+
+#today-box {
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: baseline;
+	flex-wrap: wrap;
+}
+
+#today-header #task-submit {
+	flex: 0, 0;
+}
+
+#today-header {
+	display: inline-block;
+}
+
+#task-submit {
+	color: white;
+	background-color: #101010;
+	border: none;
+	border-radius: 5px;
+	float: right;
+	margin: 1.25em 0em 0em 0em;
+}
+
+#task-submit:focus {
+	outline: 0;
+}
+
+#task-submit:active {
+	color: black;
+	background-color: #999999
+}
+.hours-alert {
+    padding: 7px;
+    width: 35%;
+    display: inline-block;
+    text-align: center;
+    font-size: large;
+    background-color: #EBB3BA;
+    color: #9C0000;
+    border-radius: 5px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    flex: 1, 1;
+
+
+}

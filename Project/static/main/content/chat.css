@@ -71,14 +71,14 @@ p {
 }
 
 .rooms li {
-	color: white;
+	color: #999999;
     padding: 5px 7px;
     background: #101010;
     display: inline;
     position: relative;
     left: -42px;
     margin: 5px 2px;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
 }
 
