@@ -32,7 +32,7 @@ class Task():
 
 class Player(models.Model):
     name = models.OneToOneField(User, on_delete=models.CASCADE)
-    knowledge = models.ForeignKey('Knowledge', on_delete=models.CASCADE)
+    knowledge = models.ManyToManyField('Knowledge')
     tasks_completed = ArrayField(models.CharField(max_length=c.TASK_NAME_MAX))
     tasks_being_performed = ArrayField(models.CharField(max_length=c.TASK_NAME_MAX))
     time_remaining_in_day = models.IntegerField(default=8)
