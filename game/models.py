@@ -18,13 +18,13 @@ from . import constants as c
 
 class Task():
     def __init__(self, data):
-        print(data)
         """data must be a dictionary"""
         self.name = data["name"]
         self.prerequisites = data["prerequisites"]
         self.delay = data["delay"]
         self.time_to_complete = data["time_to_complete"]
         self.category = data["category"]
+        self.id = data["id"]
 
     def __str__(self):
         return self.name
