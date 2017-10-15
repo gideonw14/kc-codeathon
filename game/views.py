@@ -4,7 +4,6 @@ from .models import Task
 import json
 import os
 
-
 def getTaskList():
 	all_tasks = list()
 	with open("game/tasks.json","r") as json_file:
@@ -13,13 +12,11 @@ def getTaskList():
 		all_tasks.append(Task(task_data))
 	return all_tasks
 
-
 def game(request):
     if request.method == "POST":
         print("\n\n\n", request.POST.getlist('toSubmit[]'))
     # tasks = Task.objects.all()
     all_tasks = getTaskList()
-  
 
     context = {
         'title': "Game Page",
