@@ -7,4 +7,4 @@ from . import views
 app_name = 'game'
 urlpatterns = [
     url(r'^$', views.game, name='index')
-	]
+    ]
