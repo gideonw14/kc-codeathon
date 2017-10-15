@@ -1,29 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -32,6 +6,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
     line-height: 1;
+	font-style: normal;
     font-family: sans-serif;
 }
 
@@ -85,50 +60,65 @@ p {
     margin: 1em 0 2em 0;
 }
 
+.message{
+	font-style: normal;
+	padding-bottom: 10px;
+}
+
 .empty {
     color: #666;
     font-style: italic;
 }
 
 .rooms li {
+	color: #999999;
     padding: 5px 7px;
-    background: #def;
+    background: #101010;
     display: inline;
+    position: relative;
+    left: -42px;
     margin: 5px 2px;
-    border: 1px solid #bcd;
     border-radius: 2px;
     cursor: pointer;
 }
 
 .rooms li.joined {
-    background: #5898D9;
-    border: 1px solid #35485C;
+	color: #101010;
+    background: #999999;
 }
 
 #chats .room {
-    border: 1px solid #ccc;
-    padding: 5px;
-    margin: 30px 0 0 0;
+    padding: 2px;
+    margin: 15px 0 0 0;
 }
 
 #chats h2 {
-    color: #333;
+    color: #EEEEEE;
+    background-size: 
+    border-radius: 2px;
     margin: 2px 0 5px 0;
-    font-weight: bold;
+    font-size: 16pt;
 }
 
 #chats .messages {
     height: 200px;
     overflow: auto;
     background: #eee;
-    margin: 2px 0 5px 0;
+    border-radius: 2px;
+    margin: 5px 0 10px 0;
+    padding: 3px 3px 3px 3px;
 }
 
 #chats .username {
+	width: 100%;
+	padding-bottom: 5px;
     display: inline-block;
     color: #C07A36;
-    width: 100px;
-    font-weight: bold;
+}
+
+#chats .body {
+	padding-left: 10px;
+	word-wrap: normal;
 }
 
 #chats .contextual-message {
@@ -150,4 +140,20 @@ p {
     color: #DCAD5C;
     font-weight: bold;
     font-style: italic;
+}
+
+input {
+	border-radius: 2px;
+	border: none;
+	padding: 3px 0px 2px 0px;
+}
+
+button {
+	color: #999999;
+	background-color: #101010;
+	padding: 5px 10px 5px 10px;
+	border: none;
+	border-radius: 2px;
+	position: relative;
+	left: 5px;
 }

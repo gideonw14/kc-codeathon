@@ -1,7 +1,8 @@
 from django.conf.urls import url
-from chat.views import index
+from . import views
 
 app_name = 'chat'
 urlpatterns = [
-    url(r'^$', index, name='index'),  # The start point for index view
+    url(r'^$', views.index, name='index'),  # The start point for index view
+    url(r'^new-room/$', views.room_form, name='room_form')
 ]
