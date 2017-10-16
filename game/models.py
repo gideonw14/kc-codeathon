@@ -21,6 +21,7 @@ class Player(models.Model):
     knowledge = models.ManyToManyField('Knowledge')
     tasks_completed = ArrayField(models.CharField(max_length=c.TASK_NAME_MAX))
 
+
     def __str__(self):
         return self.name
 

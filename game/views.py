@@ -20,7 +20,10 @@ def getTaskList():
 @csrf_exempt
 def game(request):
     # import ipdb; ipdb.set_trace()
+    # import ipdb; ipdb.set_trace()
     all_tasks = getTaskList()
+    for task in all_tasks:
+        task.id = task.id + ' '
 
     if not Player.objects.filter(name=request.user).exists():
         player = Player(name=request.user, tasks_completed=[])
@@ -40,8 +43,12 @@ def game(request):
             for task in tasks_to_update:
                 player.tasks_completed.append(task)
             player.save()
-            # context['player'] = player
+            context['player'] = player
             return redirect(reverse('game:index'))
+
+    # for i in range(0, len(player.tasks_completed)):
+    #     player.tasks_completed[i] = player.tasks_completed[i][:-1]
+    # context['player'] = player
 
     return render(request, 'game/game.html', context)
 
