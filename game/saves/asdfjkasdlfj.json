@@ -1,0 +1,327 @@
+{
+    "tasks": [
+        {
+            "name": "Make Budget",
+            "prerequisites": [
+                "None"
+            ],
+            "delay": 0,
+            "time_to_complete": 8,
+            "category": "Finances",
+            "id": "b1108b16-44c1-4d8d-914c-ad588c5f52bf",
+            "completed": true
+        },
+        {
+            "name": "Study Design",
+            "prerequisites": [
+                "None"
+            ],
+            "delay": 0,
+            "time_to_complete": 1,
+            "category": "Design",
+            "id": "f13142f4-ddb8-4c11-ba4a-16b5ac933fd0",
+            "completed": true
+        },
+        {
+            "name": "Study Safety",
+            "prerequisites": [
+                "None"
+            ],
+            "delay": 0,
+            "time_to_complete": 1,
+            "category": "Safety",
+            "id": "df8ab0ea-7802-421a-bbb8-a4f2621d321d",
+            "completed": true
+        },
+        {
+            "name": "Study Building",
+            "prerequisites": [
+                "None"
+            ],
+            "delay": 0,
+            "time_to_complete": 1,
+            "category": "Building",
+            "id": "baab935d-f9b1-4ddc-bb19-4785a7014a90",
+            "completed": true
+        },
+        {
+            "name": "Study Finances",
+            "prerequisites": [
+                "None"
+            ],
+            "delay": 0,
+            "time_to_complete": 1,
+            "category": "Finances",
+            "id": "6c2a402f-82d8-4b59-9c3b-80cae424b9f2",
+            "completed": true
+        },
+        {
+            "name": "Study General",
+            "prerequisites": [
+                "None"
+            ],
+            "delay": 0,
+            "time_to_complete": 1,
+            "category": "All",
+            "id": "fe7f2c76-f7d2-454f-b134-10959007d617",
+            "completed": true
+        },
+        {
+            "name": "Design Desk",
+            "prerequisites": [
+                "None"
+            ],
+            "delay": 0,
+            "time_to_complete": 3,
+            "category": "Design",
+            "id": "8cff4dac-030a-4c9b-a8a8-70a75fa3db3d",
+            "completed": false
+        },
+        {
+            "name": "Design Chair",
+            "prerequisites": [
+                "None"
+            ],
+            "delay": 0,
+            "time_to_complete": 1,
+            "category": "Design",
+            "id": "a072b38f-6d27-47e2-9382-d5424d88bc2e",
+            "completed": true
+        },
+        {
+            "name": "Design Couch",
+            "prerequisites": [
+                "None"
+            ],
+            "delay": 0,
+            "time_to_complete": 4,
+            "category": "Design",
+            "id": "c8266937-24be-40c7-a0be-a89a84900826",
+            "completed": true
+        },
+        {
+            "name": "Design Bookshelf",
+            "prerequisites": [
+                "None"
+            ],
+            "delay": 0,
+            "time_to_complete": 6,
+            "category": "Design",
+            "id": "f19311cf-e172-48a5-be09-1d44c6c96548",
+            "completed": true
+        },
+        {
+            "name": "Design Coffee Table",
+            "prerequisites": [
+                "None"
+            ],
+            "delay": 0,
+            "time_to_complete": 3,
+            "category": "Design",
+            "id": "6399e39a-2256-4aa7-880c-d0e312b6bcb8",
+            "completed": false
+        },
+        {
+            "name": "Draw Plans",
+            "prerequisites": [
+                "Design Coffee Table",
+                "Design Bookshelf",
+                "Design Couch",
+                "Design Chair",
+                "Design Desk"
+            ],
+            "delay": 0,
+            "time_to_complete": 2,
+            "category": "Design",
+            "id": "cda270ef-66f7-4a59-9459-688dcf52de8b",
+            "completed": false
+        },
+        {
+            "name": "Buy Parts For Chair",
+            "prerequisites": [
+                "Design Chair"
+            ],
+            "delay": 0,
+            "time_to_complete": 4,
+            "category": "Finances",
+            "id": "523fa9a5-855c-4794-ba66-7d246e3693b4",
+            "completed": false
+        },
+        {
+            "name": "Buy Parts For Couch",
+            "prerequisites": [
+                "Design Couch"
+            ],
+            "delay": 0,
+            "time_to_complete": 2,
+            "category": "Finances",
+            "id": "6a4d7fec-035b-44f6-9669-6c8519227a94",
+            "completed": false
+        },
+        {
+            "name": "Buy Parts For Desk",
+            "prerequisites": [
+                "Design Desk"
+            ],
+            "delay": 0,
+            "time_to_complete": 4,
+            "category": "Finances",
+            "id": "4252abab-3232-4240-8c80-1c34465dc059",
+            "completed": false
+        },
+        {
+            "name": "Buy Parts For Bookshelf",
+            "prerequisites": [
+                "Design Bookshelf"
+            ],
+            "delay": 0,
+            "time_to_complete": 4,
+            "category": "Finances",
+            "id": "9269f6d9-c702-46cb-a4bb-9e17f7700de6",
+            "completed": false
+        },
+        {
+            "name": "Buy Parts For Coffee Table",
+            "prerequisites": [
+                "Design Coffee Table"
+            ],
+            "delay": 0,
+            "time_to_complete": 4,
+            "category": "Finances",
+            "id": "5cb795c6-40db-43cc-8074-46fcd1dac1e5",
+            "completed": false
+        },
+        {
+            "name": "Review Safety Standards Part 1",
+            "prerequisites": [
+                "None"
+            ],
+            "delay": 0,
+            "time_to_complete": 5,
+            "category": "Safety",
+            "id": "a585df61-efb6-4b70-894d-b8106dfd6ed3",
+            "completed": false
+        },
+        {
+            "name": "Review Safety Standards Part 2",
+            "prerequisites": [
+                "Review Safety Standards Part 1"
+            ],
+            "delay": 0,
+            "time_to_complete": 5,
+            "category": "Safety",
+            "id": "a8f56574-548e-40c0-a5a6-6dddd7f9235b",
+            "completed": false
+        },
+        {
+            "name": "Inspect Chair",
+            "prerequisites": [
+                "Build Chair"
+            ],
+            "delay": 0,
+            "time_to_complete": 3,
+            "category": "Safety",
+            "id": "31efab6a-7fa7-47b6-8fd5-0e5002b650d1",
+            "completed": false
+        },
+        {
+            "name": "Inspect Couch",
+            "prerequisites": [
+                "Build Couch"
+            ],
+            "delay": 0,
+            "time_to_complete": 3,
+            "category": "Safety",
+            "id": "e6e76e74-dcbd-4a30-b07a-8b231c962462",
+            "completed": false
+        },
+        {
+            "name": "Inspect Bookshelf",
+            "prerequisites": [
+                "Build Bookshelf"
+            ],
+            "delay": 0,
+            "time_to_complete": 3,
+            "category": "Safety",
+            "id": "b3a112dd-df10-49ae-9fe1-0b1864da9f1b",
+            "completed": false
+        },
+        {
+            "name": "Inspect Desk",
+            "prerequisites": [
+                "Build Desk"
+            ],
+            "delay": 0,
+            "time_to_complete": 3,
+            "category": "Safety",
+            "id": "1397bbb0-4308-4084-8802-633d2c7e0d29",
+            "completed": false
+        },
+        {
+            "name": "Inspect Coffee Table",
+            "prerequisites": [
+                "Build Coffee Table"
+            ],
+            "delay": 0,
+            "time_to_complete": 3,
+            "category": "Safety",
+            "id": "e7c43d75-30b2-4474-8564-1cac2c626f9a",
+            "completed": false
+        },
+        {
+            "name": "Build Couch",
+            "prerequisites": [
+                "Buy Parts For Couch"
+            ],
+            "delay": 0,
+            "time_to_complete": 5,
+            "category": "Building",
+            "id": "1dff1d7d-7519-43a3-9bae-2e548aafb7f9",
+            "completed": false
+        },
+        {
+            "name": "Build Chair",
+            "prerequisites": [
+                "Buy Parts For Chair"
+            ],
+            "delay": 0,
+            "time_to_complete": 3,
+            "category": "Building",
+            "id": "d8012bc4-1f74-40c1-b4e0-660a5ac9debf",
+            "completed": false
+        },
+        {
+            "name": "Build Bookshelf",
+            "prerequisites": [
+                "Buy Parts For Bookshelf"
+            ],
+            "delay": 0,
+            "time_to_complete": 4,
+            "category": "Building",
+            "id": "76bce2f4-3691-48cc-ae82-78ed74328371",
+            "completed": false
+        },
+        {
+            "name": "Build Coffee Table",
+            "prerequisites": [
+                "Buy Parts For Coffee Table"
+            ],
+            "delay": 0,
+            "time_to_complete": 3,
+            "category": "Building",
+            "id": "9a702a7e-f4c8-412c-ba5d-7ef7d5c41f8b",
+            "completed": false
+        },
+        {
+            "name": "Build Desk",
+            "prerequisites": [
+                "Buy Parts For Desk"
+            ],
+            "delay": 0,
+            "time_to_complete": 5,
+            "category": "Building",
+            "id": "0e68a97f-e16b-4ebd-8834-50751aca5e0b",
+            "completed": false
+        }
+    ]
+}

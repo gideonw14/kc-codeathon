@@ -40,6 +40,7 @@ class Task():
         self.time_to_complete = data["time_to_complete"]
         self.category = data["category"]
         self.id = data["id"]
+        self.completed = data["completed"]
 
     # def __str__(self):
     #     return self.name
