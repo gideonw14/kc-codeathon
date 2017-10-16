@@ -56,3 +56,19 @@ body {
 .form-control {
     width: 50%;
 }
+
+.imageFormat {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headerFormat {
+    text-align: center;
+    color: white;
+}
+
+.paragraphFormat {
+    text-align: center;
+    font-size: 20px;
+}
