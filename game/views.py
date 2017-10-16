@@ -35,7 +35,6 @@ def saveTasks(completed, taskList, username):
 @login_required()
 @csrf_exempt
 def game(request):
-	# import ipdb; ipdb.set_trace()
 	all_tasks = getTaskList(request.user.username)
 
 	if not Player.objects.filter(name=request.user).exists():
@@ -53,8 +52,6 @@ def game(request):
 		if request.method == 'POST':
 			tasks_to_update = request.POST.getlist('toSubmit[]')
 			saveTasks(tasks_to_update, all_tasks, request.user.username)
-			# return redirect("")
-			# return redirect(reverse('game:index'))
 
 	return render(request, 'game/game.html', context)
 
