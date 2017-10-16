@@ -7,43 +7,39 @@
     <link rel="stylesheet" type="text/css" href="{% static 'main/content/game.css' %}" />
     <script src="{% static 'main/scripts/game.js' %}"></script>
 
+
 <div class="container">
     <div class="row">
         <div class="col col-md-6">
         <h3>Tasks To-Do</h3>
         {% for task in tasks %}
-            <p>{{ task.id }}, {{ player.tasks_completed }}</p>
-            {% if not task.id in player.tasks_completed %}
-                {% if task.prerequisites.0 == "None" %}
-                	{% if task.completed == false %}
-	                    <a href="#" class="list-group-item todo-item" id = "{{ task.id }} " data-time = "{{ task.time_to_complete }}">
-	                    <p><h4>
-	                        Task: {{ task.name }} &emsp; Duration: {{ task.time_to_complete }}
-	                        &emsp; Category: {{ task.category }}</h4></p>
-	                    <br>
-	                    <p>No Prerequisites</p>
-	                    </a>
-	                {% endif %}
+            {% if task.prerequisites.0 == "None" %}
+            	{% if task.completed == False %}
+                    <a href="#" class="list-group-item todo-item" id = "{{ task.id }}" data-time = "{{ task.time_to_complete }}">
+                    <p><h4>
+                        Task: {{ task.name }} &emsp; Duration: {{ task.time_to_complete }}
+                        &emsp; Category: {{ task.category }}</h4></p>
+                    <br>
+                    <p>No Prerequisites</p>
+                    </a>
                 {% endif %}
             {% endif %}
         {% endfor %}
 
         {% for task in tasks %}
-            {% if not task.id in player.tasks_completed %}
-                {% if task.prerequisites.0 != "None" %}
-	                {% if task.completed == false %}
-	                    <a href = "#" class = "list-group-item todo-item" id = "{{ task.id }}" data-time = "{{ task.time_to_complete }}">
-	                    <p><h4>
-	                        Task: {{ task.name }} &emsp; Duration: {{ task.time_to_complete }}
-	                        &emsp; Category: {{ task.category }}</h4></p>
-	                    <br>
-	                    <p>Prerequisite(s):</p>
-	                    {% for prereq in task.prerequisites %}
-	                        <li> {{ prereq }} </li>
-	                    {% endfor %}
-	                    </a>
-			        {% endif %}
-                {% endif %}
+            {% if task.prerequisites.0 != "None" %}
+                {% if task.completed == False %}
+                    <a href = "#" class = "list-group-item todo-item" id = "{{ task.id }}" data-time = "{{ task.time_to_complete }}">
+                    <p><h4>
+                        Task: {{ task.name }} &emsp; Duration: {{ task.time_to_complete }}
+                        &emsp; Category: {{ task.category }}</h4></p>
+                    <br>
+                    <p>Prerequisite(s):</p>
+                    {% for prereq in task.prerequisites %}
+                        <li> {{ prereq }} </li>
+                    {% endfor %}
+                    </a>
+		        {% endif %}
             {% endif %}
         {% endfor %}
         </div>
