@@ -3,6 +3,9 @@ Our project for the 2017 Federal Reserve Coding Competition
 
 Gideon Walker, Michael Ward, Eli Gaitley, and Levi Anderson
 
+__Video Demonstration__
+[Presentation Video](https://www.youtube.com/watch?v=Of2gb3npvD4)
+
 __Problem__
 
 The problem for this Code-a-Thon was to make an application that 
